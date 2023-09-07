@@ -9,8 +9,8 @@ import com.me.exception.CookNotFoundException;
 
 public interface CookService {
 	public Cook registerCook(Cook cook);
-	public Cook deleteCook(int id) ;
-	public Cook getCook(int id) ;
+	public Cook deleteCook(int id) throws CookNotFoundException ;
+	public Cook getCook(int id) throws CookNotFoundException;
 	public List<Cook> getCook();
 	public Cook updateCook(Cook cook);
 }

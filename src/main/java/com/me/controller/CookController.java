@@ -37,12 +37,12 @@ public class CookController {
 	}
 	
 	@DeleteMapping(value = "/delete/{id}")
-	public Cook deleteCook(@PathVariable int id)  {
+	public Cook deleteCook(@PathVariable int id) throws CookNotFoundException {
 		return cookService.deleteCook(id);
 	}
 	
 	@GetMapping(value = "/get/{id}")
-	public Cook getCook(@PathVariable int id){
+	public Cook getCook(@PathVariable int id) throws CookNotFoundException{
 		return cookService.getCook(id);
 	}
 	
