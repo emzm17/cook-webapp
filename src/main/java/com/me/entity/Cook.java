@@ -8,19 +8,33 @@ import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
-@Entity
+import org.springframework.data.couchbase.core.mapping.Document;
+import org.springframework.data.couchbase.core.mapping.Field;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+
+@Document
+@Builder
+@Data
+@AllArgsConstructor
+
 public class Cook {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
+	@Field
 	@Column(name="nameEmp")
 	private String name;
 	
 	@NotBlank
+	@Field
 	private String email;
 	
-   
+    @Field
 	private int age;
 
 	@Override

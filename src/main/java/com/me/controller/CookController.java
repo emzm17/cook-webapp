@@ -20,18 +20,18 @@ import com.me.exception.CookNotFoundException;
 import com.me.service.CookService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:9098", maxAge = 3600)
+
 public class CookController {
 
 	@Autowired
 	private CookService cookService;
 	
-	@PostMapping(value = "/register", consumes={MediaType.APPLICATION_JSON_VALUE})
+	@PostMapping(value = "/register")
 	public Cook registerCook(@Valid @RequestBody Cook cook) {
 		return cookService.registerCook(cook);
 	}
 	
-	@PutMapping(value = "/update",consumes={MediaType.APPLICATION_JSON_VALUE})
+	@PutMapping(value = "/update")
 	public Cook updateCook(@RequestBody @Valid Cook cook) {
 		return cookService.updateCook(cook);
 	}
